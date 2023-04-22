@@ -84,7 +84,6 @@ const AddContact = () => {
       contactType: "",
     })
   }
-  console.log(contact, "contact");
   return (
     <Box sx={{ marginTop: "20px" }}>
       <Box

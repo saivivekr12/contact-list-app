@@ -23,7 +23,6 @@ export const contactsListSlice = createSlice({
 
     editContact:(state,action)=>{
       state.contactsList= state.contactsList.map((contact)=>{
-         console.log(action.payload,"action.payload")
          if(contact.id===action.payload.id){
             return {...action.payload}
          }
