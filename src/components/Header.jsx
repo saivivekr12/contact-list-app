@@ -7,7 +7,9 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  
     const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">

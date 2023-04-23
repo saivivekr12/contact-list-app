@@ -23,7 +23,6 @@ import {
 import { useLocation, useNavigate } from "react-router-dom";
 
 const AddContact = () => {
-  // const state = useSelector(state=>state.contacts.contactsList);
   const editState = useSelector((state) => state.contacts.editContactList);
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,9 +31,10 @@ const AddContact = () => {
     gender: "",
     contactType: "",
   });
+  const dispatch = useDispatch();
+
   const { name, gender, contactType } = contact;
 
-  const dispatch = useDispatch();
 
   useEffect(()=>{
      setContacts({
@@ -49,11 +49,12 @@ const AddContact = () => {
     const value = event.target.value;
     setContacts((prevContacts) => ({ ...prevContacts, [name]: value }));
   };
+
   const handleClick = () => {
     if (
-      !name &&
-      !gender &&
-      !contactType &&
+      (!name ||
+      !gender ||
+      !contactType )&&
       !location.pathname.includes("edit")
     ) {
       alert("please fill the form");
@@ -84,6 +85,7 @@ const AddContact = () => {
       contactType: "",
     })
   }
+  
   return (
     <Box sx={{ marginTop: "20px" }}>
       <Box

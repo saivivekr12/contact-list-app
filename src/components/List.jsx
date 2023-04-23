@@ -8,6 +8,7 @@ function List() {
   const contactState = useSelector(state=>state.contacts.contactsList);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   return (
     <>
     <MaterialTable
